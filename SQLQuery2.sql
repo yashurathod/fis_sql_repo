@@ -53,3 +53,8 @@ Status varchar(15) not null
 
 insert into Clients values(1001,'ACME Utilities',' Noida','contact@acmeutil.com',9567880032,'Manufacturing')
 select * from Clients
+
+insert into Employees values(7001,'Sandeep','Analyst',25000,10)
+insert into Departments values(10,'Design','Pune')
+insert into Projects values(401,'Inventory','2011-04-24','2011-10-01','2011-10-31',150000,1001)
+insert into EmpProjectTasks values(401,7001,'2011-04-01','2011-04-20','System Analysis','Completed')
