@@ -134,57 +134,62 @@ values(
 
 
 
------
+-----1
 select ename from emp where ename like 'A%'
------
+-----2
 select ename from emp where mgr is null
------
+-----3
 select ename,empno,sal from emp where sal between 1200 and 1400
 
------
+-----4
 select ename,sal from emp where deptno=20
 
 update emp set sal=sal+(sal*0.1) where deptno=20
 
 select * from emp where deptno=20
 
------
+-----5
 
 select count(*) as no_of_clerk from emp where job='CLERK' 
 
------
+-----6
 
 select job,avg(sal) as Avg_salary,count(job) as no_ofemp from emp group by job
 
------
+-----7
 
 select * from emp where sal in ((select min(sal) from emp),(select max(sal) from emp))
 
------
+-----8
 
 select b.deptno,b.dname,b.loc from dept b left outer join emp a on a.deptno=b.deptno group by b.deptno,b.dname,b.loc having count(a.deptno)=0
 
------
+-----9
 
 select ename,sal from emp where job='ANALYST' group by ename,sal,deptno having sal>1200 and deptno=20 order by ename asc 
 
------
+-----10
 
 select emp.deptno , sum(sal) as total_salary, dept.dname from emp inner join dept on emp.deptno=dept.deptno group by emp.deptno,dept.dname
 
------
+-----11
 
 select ename,sal from emp  where ename in('MILLER','SMITH')
 
-------
+------12
 
 select ename from emp where ename like 'A%' or ename like 'M%'
 
------
+-----13
 Select ename,sal*12 as yearly_salary from emp where ename='SMITH'
 
-------
+------14
 select ename,empno,sal from emp where sal not between 1500 and 2850
 
------
+-----15
 select mgr,count(empno) from emp group by mgr having(count(empno)>2)
+
+
+
+
+
