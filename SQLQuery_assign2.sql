@@ -150,7 +150,7 @@ select * from emp where deptno=20
 
 -----
 
-
+select count(*) as no_of_clerk from emp where job='CLERK' 
 
 -----
 
@@ -167,3 +167,25 @@ select b.deptno,b.dname,b.loc from dept b left outer join emp a on a.deptno=b.de
 
 -----
 
+select ename,sal from emp where job='ANALYST' group by ename,sal,deptno having sal>1200 and deptno=20 order by ename asc 
+
+-----
+
+select emp.deptno , sum(sal) as total_salary, dept.dname from emp inner join dept on emp.deptno=dept.deptno group by emp.deptno,dept.dname
+
+-----
+
+select ename,sal from emp  where ename in('MILLER','SMITH')
+
+------
+
+select ename from emp where ename like 'A%' or ename like 'M%'
+
+-----
+---there is no yearly salary data
+
+------
+select ename,empno,sal from emp where sal not between 1500 and 2850
+
+-----
+select mgr,count(empno) from emp group by mgr having(count(empno)>2)
