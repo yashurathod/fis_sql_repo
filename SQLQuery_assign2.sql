@@ -158,8 +158,7 @@ select job,avg(sal) as Avg_salary,count(job) as no_ofemp from emp group by job
 
 -----
 
-select * from emp where sal = (select min(sal) from emp)
-select * from emp where sal = (select max(sal) from emp)
+select * from emp where sal in ((select min(sal) from emp),(select max(sal) from emp))
 
 -----
 
