@@ -181,7 +181,7 @@ select ename,sal from emp  where ename in('MILLER','SMITH')
 select ename from emp where ename like 'A%' or ename like 'M%'
 
 -----
----there is no yearly salary data
+Select ename,sal*12 as yearly_salary from emp where ename='SMITH'
 
 ------
 select ename,empno,sal from emp where sal not between 1500 and 2850
